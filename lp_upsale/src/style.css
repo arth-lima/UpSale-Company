@@ -164,7 +164,7 @@ header nav.menu-desktop ul li {
 }
 
 .menu-mobile nav ul{
-    text-align: right;
+    text-align: left;
 }
 
 .menu-mobile nav ul li a{
@@ -173,11 +173,15 @@ header nav.menu-desktop ul li {
     font-weight: 300;
     padding: 20px 4%;
     display: block;
+    /* position: relative;
+    right: 50px; */
 }
 
 .menu-mobile nav ul li a:hover{
     background-color: var(--primary-color-1);
     color: var(--black);
+    border-radius: 10px;
+    width: 80%;
 }
 
 
@@ -407,6 +411,87 @@ footer .line-footer p a{
 }
 
 
+@media screen and (max-width: 1052px){
+
+    section {
+        padding: 60px 6%;
+    }
+
+       /* .logo img {
+    width: 40%;
+    height: auto;
+} */
+
+    /* Ajuste geral de espaçamento */
+    .interface {
+        padding: 0 20px;
+    }
+
+    /* Flex ainda em linha, mas mais compacto */
+    .flex{
+        gap: 40px;
+    }
+
+    /* TOPO */
+    .topo-do-site .flex{
+        gap: 50px;
+    }
+
+    .topo-do-site h1{
+        font-size: 36px;
+        line-height: 38px;
+    }
+
+    .topo-do-site .img-topo-site img{
+        max-width: auto;
+    }
+
+    /* MENU */
+    header nav.menu-desktop ul li{
+        padding: 0 20px;
+    }
+
+    /* ESPECIALIDADES */
+    section.especialidades .flex{
+        gap: 30px;
+    }
+
+    .especialidades .especialidades-box{
+        padding: 25px;
+    }
+
+    .especialidades .especialidades-box h3{
+        font-size: 22px;
+    }
+
+    /* SOBRE */
+    section.sobre .flex{
+        gap: 40px;
+    }
+
+    .sobre .img-sobre img{
+        width: 200px;
+    }
+
+    .sobre .txt-sobre h2{
+        font-size: 34px;
+        line-height: 36px;
+    }
+
+    /* PORTFÓLIO */
+  section.portfolio .flex{
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    /* BOTÕES */
+    .btn-contato button{
+        padding: 10px 30px;
+        font-size: 16px;
+    }
+
+}
+
 @media screen and (max-width: 780px){
 
 
@@ -450,7 +535,7 @@ footer .line-footer p a{
     }
 
     .topo-do-site .img-topo-site img{
-        width: 100%;
+        max-width: 90%;
     }
 
     section.especialidades{
@@ -472,7 +557,7 @@ footer .line-footer p a{
     }
 
     .img-sobre img{
-        width: 100%;
+        display: none;
     }
 
     section.portfolio .flex{
@@ -489,6 +574,12 @@ footer .line-footer p a{
         gap: 30px;
     }
 
-    
+    .line-footer .logo-footer img {
+    display: none;
+}
+
+    .logo img {
+    display: none;
+}
 
 }

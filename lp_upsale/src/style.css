@@ -20,13 +20,25 @@ body{
     background-color: var(--black);
 }
 
+.spacer1{
+    min-height: calc(100vh - 250px); /* ajuste conforme altura do header */
+    display: flex;
+    align-items: center;
+}
+
+.spacer2{
+    height: 10vh;
+}
+
+
+
 .interface {
     max-width: 1280px;
     margin: 0 auto;
 }
 
 .logo img {
-    width: 200px;
+    width: 125px;
     height: auto;
 }
 
@@ -359,7 +371,7 @@ section.portfolio .flex {
 }
 
 .line-footer .logo-footer img {
-    width: 200px;
+    width: 75px;
     height: auto;
 }
 

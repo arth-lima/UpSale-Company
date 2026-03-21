@@ -31,7 +31,6 @@ body{
 }
 
 
-
 .interface {
     max-width: 1280px;
     margin: 0 auto;
@@ -184,6 +183,10 @@ header nav.menu-desktop ul li {
 
 section.topo-do-site {
     padding: 40px 4%;
+     min-height: calc(100vh - 204px); /* ajuste fino */
+    display: flex;
+    align-items: center;
+    padding: 60px 4%;
 }
 
 section.topo-do-site .flex {
@@ -208,6 +211,9 @@ section.topo-do-site .flex {
 }
 
 section.especialidades {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
     padding: 40px 4%;
 }
 
@@ -245,6 +251,9 @@ section.especialidades .flex {
 }
 
 section.sobre {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
     padding: 80px 4%;
 }
 
@@ -399,6 +408,13 @@ footer .line-footer p a{
 
 
 @media screen and (max-width: 780px){
+
+
+    
+    section {
+        min-height: auto; /* deixa crescer naturalmente */
+        padding: 60px 8%;
+    }
     
     .flex{
         flex-direction: column;

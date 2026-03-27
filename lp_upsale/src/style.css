@@ -62,6 +62,18 @@ body{
     transition: .2s;
 }
 
+.btn-contato-mobile button{
+    display: none;
+    padding: 10px 40px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: var(--primary-color-1);
+    border: 0;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .2s;
+}
+
 h2.titulo {
     color: var(--white);
     font-size: 38px;
@@ -504,6 +516,18 @@ footer .line-footer p a{
     .flex{
         flex-direction: column;
     }
+    
+    .btn-contato-mobile button{
+        display: flex;
+        text-align: center;
+        align-items: center;
+    
+}
+.btn-contato-mobile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+}
 
     .btn-abrir-menu i{
         display: block;
@@ -521,6 +545,13 @@ footer .line-footer p a{
     .menu-desktop, .btn-contato{
         display: none;
     }
+/* 
+    .interface{
+         display: flex;
+         align-items: center;
+            
+    } */
+    
 
     section.topo-do-site .flex{
         gap: 40px;
@@ -528,6 +559,7 @@ footer .line-footer p a{
 
     section.topo-do-site{
         padding: 20px 8%;
+
     }
 
     .topo-do-site h1{

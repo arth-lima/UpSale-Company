@@ -186,22 +186,27 @@
                 <div class="flex">
                     <div class="img-port">
                         <img src="src/img/tela-cardapio.png" alt="">
-                        <video src="src/vid/video-cardapio.mp4" muted loop></video>
+                        <video src="src/vid/video-cardapio.mp4" muted loop playsinline preload="metadata"></video>
+                        <!-- <video src="src/vid/video-cardapio.mp4" muted loop></video> -->
+                         
                         <div class="overlay">Projeto Restaurante</div>
                     </div>
                     <div class="img-port">
                         <img src="src/img/tela-filme.png" alt="">
-                        <video src="src/vid/marvel.mp4" muted loop></video>
+                        <video src="src/vid/marvel.mp4" muted loop playsinline preload="metadata"></video>
+                        <!-- <video src="src/vid/marvel.mp4" muted loop></video> -->
                         <div class="overlay">Projeto Filme</div>
                     </div>
                     <div class="img-port">
                         <img src="src/img/tela-tenis.png" alt="">
-                        <video src="src/vid/tenis.mp4" muted loop></video>
+                        <video src="src/vid/tenis.mp4" muted loop playsinline preload="metadata"></video>
+                        <!-- <video src="src/vid/tenis.mp4" muted loop></video> -->
                         <div class="overlay">Projeto Loja de Calçados</div>
                     </div>
                     <div class="img-port">
                         <img src="src/img/tela-viagens.png" alt="">
-                        <video src="src/vid/explora_viagens.mp4" muted loop></video>
+                        <video src="src/vid/explora_viagens.mp4" muted loop playsinline preload="metadata"></video>
+                        <!-- <video src="src/vid/explora_viagens.mp4" muted loop></video> -->
                         <div class="overlay">Projeto Agência de Viagens</div>
                     </div>
                 </div>
@@ -233,22 +238,55 @@
     </footer>
 
     <!-- Para a animação do portfólio -->
-    <script>
-        document.querySelectorAll(".img-port").forEach(port => {
+   <script>
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
-            const video = port.querySelector("video")
+    document.querySelectorAll(".img-port").forEach(port => {
 
+        const video = port.querySelector("video");
+
+        if (isTouchDevice) {
+            // MOBILE → só toca ao clicar
+            video.pause();
+            video.currentTime = 0;
+
+            port.addEventListener("click", () => {
+
+                // pausa todos os outros vídeos
+                document.querySelectorAll(".img-port video").forEach(v => {
+                    if (v !== video) {
+                        v.pause();
+                        v.currentTime = 0;
+                        v.style.opacity = "0";
+                    }
+                });
+
+                // alterna play/pause
+                if (video.paused) {
+                    video.play().catch(() => {});
+                    video.style.opacity = "1";
+                } else {
+                    video.pause();
+                    video.currentTime = 0;
+                    video.style.opacity = "0";
+                }
+
+            });
+
+        } else {
+            // DESKTOP → hover normal
             port.addEventListener("mouseenter", () => {
-                video.play()
-            })
+                video.play().catch(() => {});
+            });
 
             port.addEventListener("mouseleave", () => {
-                video.pause()
-                video.currentTime = 0
-            })
+                video.pause();
+                video.currentTime = 0;
+            });
+        }
 
-        })
-    </script>
+    });
+</script>
 </body>
 
 </html>
